@@ -1,0 +1,15 @@
+<main>
+    <div class="login-container">
+        <u><h2>Login</h2></u>
+        <form [formGroup]="userForm" (ngSubmit)="onSubmit()" method="POST">
+            <u><label for="username">Username:</label></u>
+            <input type="text" id="username" formControlName="username" required>
+  
+            <u><label for="password">Password:</label></u>
+            <input type="password" id="password" formControlName="password" required>
+  
+            <button type="submit">Login</button>
+        </form>
+    </div>
+</main>
+    
