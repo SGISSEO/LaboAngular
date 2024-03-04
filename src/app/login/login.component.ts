@@ -11,13 +11,6 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  username: string = '';
-  password: string = '';
-  userData = {
-    username: '',
-    email: '',
-    password: ''
-  };
   userForm!: FormGroup;
 
   constructor(
@@ -34,23 +27,7 @@ export class LoginComponent {
  
 
   onSubmit() {
-    // console.log(this.userData);
     
-    //  this.userService.login(this.userData)
-    //    .subscribe({
-    //      next: response => {
-    //        console.log('Réponse du serveur :', response);
-        
-    //        if (response) {
-    //          this.router.navigate(['/home']);
-    //        } else {
-    //          console.error('La connexion a échoué : Réponse vide ou invalide.');
-    //        }
-    //      },
-    //      error: error => {
-    //        console.error('Erreur lors de l\'envoi des données au serveur :', error);
-    //      }
-    //    });
 
     console.log(this.userForm);
     

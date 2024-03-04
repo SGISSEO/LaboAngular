@@ -1,20 +1,50 @@
-<app-navbar></app-navbar>
-<form (ngSubmit)="onSubmit()">
+<div class="background-container">
 
-    <div>
-        <label for="username">Nom d'utilisateur:</label>
-        <input type="text" id="username" name="username" [(ngModel)]="userData.username" pInputText style="margin-bottom: 10px; margin-left: 10px;" required>
-    </div>
+  <form class="register-container" [formGroup]="userForm"  (ngSubmit)="onSubmit()">
 
-    <div>
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" [(ngModel)]="userData.email" pInputText style="margin-bottom: 10px; margin-left: 10px;" required>
-    </div>
 
-    <div>
-        <label for="password">Mot de passe:</label>
-        <input type="password" id="password" name="password" [(ngModel)]="userData.password" pInputText style="margin-bottom: 10px; margin-left: 10px;" required>
-    </div>
+      <i><u><h2>Register</h2></u></i>
 
-    <button type="submit" pButton label="Register"></button>
-</form>
+      <div class="p-fluid">
+
+        <div class="p-field" [ngStyle]="{'border-right-color': userForm.controls['username'].dirty && (userForm.controls['username'].invalid ? 'red' : 'green')}">
+          <label for="username">Username:</label>
+            <input type="text" id="username" pInputText name="username" formControlName="username" required minlength="5" maxlength="15"/>
+            <div *ngIf="userForm.controls['username'].invalid && (userForm.controls['username'].dirty || userForm.controls['username'].touched)" class="p-error">
+              <div *ngIf="userForm.controls['username'].errors?.['required']">Username is required</div>
+              <div *ngIf="userForm.controls['username'].errors?.['minlength']">Username must be at least 5 characters long</div>
+              <div *ngIf="userForm.controls['username'].errors?.['maxlength']">Username cannot be longer than 15 characters</div>
+            </div>
+          </div>
+
+
+          <div class="p-field" [ngStyle]="{'border-right-color': userForm && userForm.controls['email'] && userForm.controls['email'].dirty && userForm.controls['email'].invalid ? 'red' : userForm && userForm.controls['email'] && userForm.controls['email'].dirty && userForm.controls['email'].valid ? 'green' : ''}">
+              <label for="email">Email:</label>
+              <input type="email" id="email" pInputText name="email" formControlName="email" required/>
+              <div *ngIf="userForm && userForm.controls['email'] && userForm.controls['email'].invalid && (userForm.controls['email'].dirty || userForm.controls['email'].touched)" class="p-error">
+                  <div *ngIf="userForm.controls['email'].errors?.['required']">Email is required</div>
+                  <div *ngIf="userForm.controls['email'].errors?.['minlength']">Email must be at least 5 characters long</div>
+                  <div *ngIf="userForm.controls['email'].errors?.['maxlength']">Email cannot be longer than 15 characters</div>
+              </div>
+          </div>
+        
+
+
+
+          <div class="p-field" [ngStyle]="{'border-right-color': userForm.controls['password'].dirty && userForm.controls['password'].invalid ? 'red' : userForm.controls['password'].dirty && userForm.controls['password'].valid ? 'green' : ''}">
+            <label for="password">Password:</label>
+            <input type="password" id="password" pInputText formControlName="password" name="password" required minlength="5" maxlength="15"/>
+         
+            <div *ngIf="userForm.controls['password'].invalid && (userForm.controls['password'].dirty || userForm.controls['password'].touched)" class="p-error">
+              <div *ngIf="userForm.controls['password'].errors?.['required']">Password is required</div>
+              <div *ngIf="userForm.controls['password'].errors?.['minlength']">Password must be at least 5 characters long</div>
+              <div *ngIf="userForm.controls['password'].errors?.['maxlength']">Password cannot be longer than 15 characters</div>
+            </div>
+          </div>
+          <button type="submit" icon="pi pi-user-plus" pButton label="Register" class="p-button-success p-button-outlined"[disabled]="!userForm.valid"></button>
+          <button type="submit" icon="pi pi-sign-in" pButton label="Se connecter" class="p-button-help p-button-outlined" routerLink="/login"></button>
+        </div>
+  </form>
+</div>
+  
+

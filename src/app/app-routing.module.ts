@@ -11,10 +11,10 @@ const routes: Routes = [
     { path: 'register', component: RegisterComponent },
     { path: 'login', component: LoginComponent },
     { path: 'home', component: HomeComponent },
-    { path: 'seances', component: SeanceComponent },
-    { path: 'films', component: FilmComponent },
+    { path: 'seance', component: SeanceComponent },
+    { path: 'film', component: FilmComponent },
     { path: 'reservation', component: ReservationComponent},
-  
+    { path: 'salle', component: ReservationComponent},
 ];
 
 @NgModule({

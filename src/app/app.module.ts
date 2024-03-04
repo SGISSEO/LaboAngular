@@ -17,6 +17,11 @@ import { InputTextModule } from 'primeng/inputtext';
 import { SeanceComponent } from './seance/seance.component';
 import { FilmComponent } from './film/film.component';
 import { ReservationComponent } from './reservation/reservation.component';
+import { AvatarModule } from 'primeng/avatar';
+import { AvatarGroupModule } from 'primeng/avatargroup';
+import { CarouselModule } from 'primeng/carousel';
+import { TabMenuModule } from 'primeng/tabmenu';
+import { SalleComponent } from './salle/salle.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,6 +31,8 @@ import { ReservationComponent } from './reservation/reservation.component';
     NavbarComponent,
     SeanceComponent,
     FilmComponent,
+    ReservationComponent,
+    SalleComponent,
   ],
   imports: [
     BrowserModule,
@@ -39,6 +46,10 @@ import { ReservationComponent } from './reservation/reservation.component';
     MenuModule,
     BadgeModule,
     InputTextModule,
+    AvatarModule,
+    AvatarGroupModule,
+    CarouselModule,
+    TabMenuModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

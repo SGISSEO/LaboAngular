@@ -1,2 +1,35 @@
-<app-navbar></app-navbar>
-<h1>Test</h1>
+<div class="background-container">
+  <h1 class="text-center">Bienvenue sur la Gestion de Cinéma</h1>
+
+  <div class="films-container">
+    <h2>Films à l'Affiche</h2>
+    <p-carousel [value]="films" [numVisible]="3" [numScroll]="3">
+      <ng-template let-film pTemplate="item">
+        <div class="film-card">
+          <img [src]="film.imageUrl" width="200" height="300">
+          <div class="film-details">
+            <h3>{{film.title}}</h3>
+            <p><strong>Genre:</strong> {{film.genre}}</p>
+            <p><strong>Directeur:</strong> {{film.director}}</p>
+            <p><strong>Durée:</strong> {{film.duration}}</p>
+          </div>
+        </div>
+      </ng-template>
+    </p-carousel>
+  </div>
+
+
+  <div class="container">
+    <div class="films-container">
+    </div>
+
+    <div class="seances-container">
+      <h2>Séances à Venir</h2>
+        <div *ngFor="let seance of seances" class="seance-item">
+          <strong><p>{{ seance.film }}</p></strong>
+          <p>Date: {{ seance.date | date: 'dd/MM/yyyy' }}</p>
+          <p>Heure: {{ seance.time }}</p>
+        </div>
+    </div>
+  </div>
+</div>
