@@ -22,6 +22,10 @@ import { AvatarGroupModule } from 'primeng/avatargroup';
 import { CarouselModule } from 'primeng/carousel';
 import { TabMenuModule } from 'primeng/tabmenu';
 import { SalleComponent } from './salle/salle.component';
+import { UserService } from './services/user.service';
+import { TableModule } from 'primeng/table';
+import { AccordionModule } from 'primeng/accordion';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -50,8 +54,12 @@ import { SalleComponent } from './salle/salle.component';
     AvatarGroupModule,
     CarouselModule,
     TabMenuModule,
+    TableModule,
+    AccordionModule,
   ],
-  providers: [],
+  providers: [
+    UserService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -29,6 +29,5 @@
     height: 100vh; /* Hauteur égale à la hauteur de la fenêtre */
     width: 100%; /* Largeur égale à la largeur de la fenêtre */
     position: fixed; /* Fixer l'élément pour qu'il reste en arrière-plan */
-    top: 0; /* Aligner en haut */
     left: 0; /* Aligner à gauche */
   }

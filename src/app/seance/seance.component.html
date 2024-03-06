@@ -1,1 +1,103 @@
-<p>seance works!</p>
+<div class="background-container">
+  <div class="card flex justify-content-center">
+    <p-accordion [activeIndex]="1"> <!-- Vous devez utiliser l'attribut activeIndex pour spécifier l'index de l'onglet actif -->
+      <p-accordionTab>
+        <ng-template pTemplate="header">
+          <h3>Séances du jour</h3>
+        </ng-template>
+        <ng-template pTemplate="content">
+          <h3>Spider-Man: No Way Home 1</h3>
+          <p><strong>Genre:</strong> Action, Aventure, Fantaisie</p>
+          <p><strong>Directeur:</strong> Jon Watts</p>
+          <p><strong>Durée:</strong> 2h28m</p>
+          <p><strong>Date:</strong> 18/03/2024</p>
+          <p><strong>Heure:</strong> 18 Heures</p>
+
+
+          <h3>The Batman</h3>
+          <p><strong>Genre:</strong> Action, Crime, Drame</p>
+          <p><strong>Directeur:</strong> Matt Reeves</p>
+          <p><strong>Durée:</strong> 2h56m</p>
+          <p><strong>Date:</strong> 18/03/2024</p>
+          <p><strong>Heure:</strong> 21 Heures</p>
+
+
+
+          <h3>Dune</h3>
+          <p><strong>Genre:</strong> Science-fiction, Aventure, Action</p>
+          <p><strong>Directeur:</strong> Denis Villeneuve</p>
+          <p><strong>Durée:</strong> 2h35m</p>
+          <p><strong>Date:</strong> 18/03/2024</p>
+          <p><strong>Heure:</strong> 23 Heures</p>
+
+        </ng-template>
+      </p-accordionTab>
+    </p-accordion>
+
+
+    <p-accordion [activeIndex]="1"> 
+      <p-accordionTab>
+        <ng-template pTemplate="header">
+          <h3>Séances à venir</h3>
+        </ng-template>
+        <ng-template pTemplate="content">
+          <h3>Aquaman et le royaume perdu</h3>
+          <p><strong>Genre:</strong> Action, Aventure, Fantaisie</p>
+          <p><strong>Directeur:</strong> James Wan</p>
+          <p><strong>Durée:</strong> Inconnu</p>
+          <p><strong>Date:</strong> 18/05/2024</p>
+          <p><strong>Heure:</strong> 18 Heures</p>
+
+
+          <h3>The Flash</h3>
+          <p><strong>Genre:</strong> Action, Aventure</p>
+          <p><strong>Directeur:</strong> Andy Muschietti</p>
+          <p><strong>Durée:</strong> Inconnu</p>
+          <p><strong>Date:</strong> 18/05/2024</p>
+          <p><strong>Heure:</strong> 21 Heures</p>
+
+
+          <h3>Black Adam</h3>
+          <p><strong>Genre:</strong> Science-fiction, Aventure, Action</p>
+          <p><strong>Directeur:</strong> Jaume Collet-Serra</p>
+          <p><strong>Durée:</strong> Inconnu</p>
+          <p><strong>Date:</strong> 18/05/2024</p>
+          <p><strong>Heure:</strong> 23 Heures</p>
+        </ng-template>
+      </p-accordionTab>
+    </p-accordion>
+
+
+    <p-accordion [activeIndex]="1"> 
+      <p-accordionTab>
+        <ng-template pTemplate="header">
+          <h3>Séances terminées</h3>
+        </ng-template>
+        <ng-template pTemplate="content">
+          <h3>Venom: Let There Be Carnage</h3>
+          <p><strong>Genre:</strong> Action, Aventure, Science-Fiction</p>
+          <p><strong>Directeur:</strong> Andy Serkis</p>
+          <p><strong>Durée:</strong> 1h37m</p>
+          <p><strong>Date:</strong> 04/03/2024</p>
+          <p><strong>Heure:</strong> 18 Heures</p>
+
+
+          <h3>Man of Steel</h3>
+          <p><strong>Genre:</strong> Action, Aventure, Science-Fiction</p>
+          <p><strong>Directeur:</strong> Zack Snyder</p>
+          <p><strong>Durée:</strong> 2h23m</p>
+          <p><strong>Date:</strong> 04/03/2024</p>
+          <p><strong>Heure:</strong> 21 Heures</p>
+
+
+          <h3>Joker</h3>
+          <p><strong>Genre:</strong> Drame, Thriller, Crime</p>
+          <p><strong>Directeur:</strong> Todd Phillips</p>
+          <p><strong>Durée:</strong> 2h2m</p>
+          <p><strong>Date:</strong> 04/03/2024</p>
+          <p><strong>Heure:</strong> 23 Heures</p>
+        </ng-template>
+      </p-accordionTab>
+    </p-accordion>
+  </div>
+</div>

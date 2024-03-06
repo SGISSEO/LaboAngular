@@ -1,1 +1,20 @@
-<p>film works!</p>
+<div class="background-container">
+  <div class="films-container">
+    <h2>Tous les films</h2>
+    <p-carousel [value]="films" [numVisible]="3" [numScroll]="3" [autoplayInterval]="5000">
+      <ng-template let-film pTemplate="item">
+        <div class="film-card">
+          <img [src]="film.imageUrl" width="200" height="300">
+          <div class="film-details">
+            <h3>{{film.title}}</h3>
+            <p><strong>Genre:</strong> {{film.genre}}</p>
+            <p><strong>Directeur:</strong> {{film.director}}</p>
+            <p><strong>Durée:</strong> {{film.duration}}</p>
+            <p><strong>Description:</strong> {{film.description}}</p>
+
+          </div>
+        </div>
+      </ng-template>
+    </p-carousel>
+  </div>
+</div>

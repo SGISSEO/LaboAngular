@@ -3,6 +3,11 @@
 @import "primeicons/primeicons.css";
 body {
     font-family: Arial, sans-serif;
+    background-image: url('/assets/Cinema.png');
+    background-size: cover; 
+    background-repeat: repeat;
+    background-position: center;
+    min-height: 100vh;
 }
 
 *{

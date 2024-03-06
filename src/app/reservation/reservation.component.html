@@ -1,1 +1,26 @@
-<p>reservation works!</p>
+<div class="container">
+  <h2>Liste des réservations</h2>
+  <p-table [value]="reservations">
+    <ng-template pTemplate="header">
+      <tr>
+        <th>Siège</th>
+        <th>Utilisateur</th>
+        <th>Réservation</th>
+        <th>Action</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-reservation>
+      <tr>
+        <td>{{ reservation.seat }}</td>
+        <td>{{ reservation.user }}</td>
+        <td>{{ reservation.status }}</td>
+        <td>
+          <!-- Bouton pour réserver -->
+          <button pButton type="button" icon="pi pi-book" class="p-button-success p-button-outlined" *ngIf="userService.isLogged" (click)="reserverSiege(reservation)" label="Réserver"></button>
+          <!-- Bouton pour réinitialiser pour chaque réservation -->
+          <button pButton type="button" icon="pi pi-refresh" class="p-button-info p-button-outlined" *ngIf="userService.isLogged" (click)="resetReservationsForSeat(reservation)" label="Réinitialiser"></button>
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>

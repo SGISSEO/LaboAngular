@@ -13,6 +13,9 @@ const BASE_URL = 'http://localhost:8080/api/users'
 })
 export class UserService {
 
+
+  // utilisateurConnecte: boolean = false;
+
   private _isLogged$!:BehaviorSubject<boolean>;
 
   constructor(
@@ -41,6 +44,7 @@ export class UserService {
 
   logout(){
     this.auth = null;
+    // this.utilisateurConnecte = true;
   }
 
   get auth() {

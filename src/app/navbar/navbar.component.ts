@@ -25,7 +25,7 @@ export class NavbarComponent {
         {label: 'Réservations', routerLink: '/reservation', icon: 'pi pi-bookmark'},
         {label: 'Login', routerLink: '/login', icon: 'pi pi-sign-in',visible: !this.isLogged},
         {label: 'Register', routerLink: '/register', icon: 'pi pi-user-plus',visible: !this.isLogged},
-        {label: 'Logout', routerLink: '/login', icon: 'pi pi-sign-out', command: () => this.logout(),visible: this.isLogged}
+        {label: 'Logout', routerLink: '/login', icon: 'pi pi-sign-out', command: () => this.logout(),visible: this.isLogged},
       ];
     })
 
