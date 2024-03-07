@@ -15,14 +15,13 @@ export class UserService {
 
 
   // utilisateurConnecte: boolean = false;
-
   private _isLogged$!:BehaviorSubject<boolean>;
+
 
   constructor(
     private readonly http: HttpClient
   ) { 
       this._isLogged$ = new BehaviorSubject<boolean>(!!this.auth)
-    
   }
 
   get isLogged(){
@@ -31,6 +30,8 @@ export class UserService {
   get isLogged$(){
     return this._isLogged$.asObservable()
   }
+  
+ 
 
   register(user: RegisterForm): Observable<User> {
     return this.http.post<User>(BASE_URL + '/register', user)
@@ -39,12 +40,11 @@ export class UserService {
   login(user: LoginForm): Observable<Auth> {
     return this.http.post<Auth>(BASE_URL + '/login', user).pipe(
       tap(auth => this.auth = auth)
-    )
+    );
   }
 
   logout(){
     this.auth = null;
-    // this.utilisateurConnecte = true;
   }
 
   get auth() {
@@ -72,6 +72,5 @@ export class UserService {
     }
 
   }
-
 }
 

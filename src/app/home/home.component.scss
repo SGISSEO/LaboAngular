@@ -9,8 +9,9 @@
   justify-content: space-between; /* Pour répartir l'espace disponible entre les éléments */
 }
 
+
+
 .films-container, .seances-container {
-  // width: calc(10.33% - 10px); /* 10.33% de largeur pour afficher trois éléments par ligne avec un espacement de 10px entre eux */
   margin: 10px; /* Espacement entre les éléments */
   box-sizing: border-box; 
 }
@@ -20,26 +21,65 @@
   display: flex;
   flex-wrap: wrap; /* Permet aux éléments de passer à la ligne si nécessaire */
   width: 100%;
+  
 }
 p-carousel {
   width: 100%;
 }
 
 .film-card {
-  // width: calc(10.33% - 20px); /* 10.33% de largeur pour afficher trois éléments par ligne avec un espacement de 20px entre eux */
-  margin: 1px; /* Espacement entre les éléments */
-  box-sizing: border-box; /* Inclut les marges dans la largeur */
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease;
 }
+
+.film-card:hover {
+  transform: scale(1.05);
+}
+
+.film-card.hovered img {
+  filter: brightness(80%);
+}
+.category {
+  text-align: center;
+  padding: 20px;
+  border: 2px solid white;
+  border-radius: 10px;
+  width: 200px;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+.category:hover {
+  background-color: white;
+}
+.custom-header {
+  font-size: 20px;
+  color: black;
+  background-color: rgb(209, 201, 201);
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.custom-header:hover {
+  background: linear-gradient(to right, rgb(85, 85, 85), rgb(205, 200, 200));
+}
+
+
+
+
+
+
+
+
+
+
+
+
 .seance-item {
   margin-bottom: 10px; /* Espacement entre les éléments */
 }
-// .background-container {
-//   background-image: url('/assets/Cinema.png');
-//   background-size: cover; 
-//   background-repeat: repeat;
-//   background-position: center;
-//   height: 100%;
-// }
+
 
 .text-center, .film-details, .seances-container {
 color: rgba(255, 255, 255, 0.9); /* Noir légèrement transparent */

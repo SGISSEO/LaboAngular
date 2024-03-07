@@ -1,5 +1,8 @@
 <div class="container">
-  <h2>Liste des réservations</h2>
+  <ng-container *ngIf="!userService.isLogged && isReservationPage()">
+    <p-messages [(value)]="messages" [enableService]="false" [closable]="true"></p-messages>
+  </ng-container>
+
   <p-table [value]="reservations">
     <ng-template pTemplate="header">
       <tr>
@@ -14,11 +17,14 @@
         <td>{{ reservation.seat }}</td>
         <td>{{ reservation.user }}</td>
         <td>{{ reservation.status }}</td>
-        <td>
+        <td *ngIf="userService.isLogged">
           <!-- Bouton pour réserver -->
-          <button pButton type="button" icon="pi pi-book" class="p-button-success p-button-outlined" *ngIf="userService.isLogged" (click)="reserverSiege(reservation)" label="Réserver"></button>
+          <button pButton type="button" icon="pi pi-book" class="p-button-success p-button-outlined" (click)="reserverSiege(reservation)" label="Réserver"></button>
           <!-- Bouton pour réinitialiser pour chaque réservation -->
-          <button pButton type="button" icon="pi pi-refresh" class="p-button-info p-button-outlined" *ngIf="userService.isLogged" (click)="resetReservationsForSeat(reservation)" label="Réinitialiser"></button>
+          <button pButton type="button" icon="pi pi-refresh" class="p-button-info p-button-outlined" (click)="resetReservationsForSeat(reservation)" label="Réinitialiser"></button>
+        </td>
+        <td *ngIf="!userService.isLogged">
+          
         </td>
       </tr>
     </ng-template>

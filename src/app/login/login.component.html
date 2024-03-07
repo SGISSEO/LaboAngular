@@ -1,6 +1,8 @@
 <div class="background-container">
 
   <form class="login-container" [formGroup]="userForm"  (ngSubmit)="onSubmit()">
+    <p-messages [(value)]="messages" [enableService]="false" [closable]="true"></p-messages>
+
 
 
       <i><u><h2>Login</h2></u></i>

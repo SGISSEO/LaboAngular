@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from '../services/user.service';
+import { Message } from 'primeng/api';
 
 @Component({
   selector: 'app-salle',
@@ -6,10 +8,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./salle.component.scss']
 })
 export class SalleComponent implements OnInit {
+  isLogged!: boolean;
+
 
 
   salles: any[] = [
-    { nom: 'Salle 1', capacite: 50,  personne: 49, film: 'Spider-Man: No Way Home 1', etat: 'Libre' },
+    { nom: 'Salle 1', capacite: 50,  personne: 49, film: 'Spider-Man: No Way Home 1', etat: 'Libre'},
     { nom: 'Salle 2', capacite: 50,  personne: 50, film: 'The Batman', etat: 'Occupée' },
     { nom: 'Salle 3', capacite: 50,  personne: 25, film: 'Dune', etat: 'Libre' },
 
@@ -23,9 +27,11 @@ export class SalleComponent implements OnInit {
 
   ];
 
-  constructor() { }
+  constructor(public userService: UserService) { }
 
-  ngOnInit(): void {
-  }
+  messages: Message[] = []; // Initialisez messages avec un tableau vide
+  ngOnInit() {
+    this.messages = [{ severity: 'info', summary: 'info', detail: 'Vous devez être connecté pour pouvoir voir le contenu de cette page.' }];
+}
 
 }

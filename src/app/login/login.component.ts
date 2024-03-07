@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { UserService } from '../services/user.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Message } from 'primeng/api';
 
 @Component({
   selector: 'app-login',
@@ -11,12 +12,15 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
+  messages: Message[] = [];
+
+
   userForm!: FormGroup;
 
   constructor(
     private router: Router,
     private userService: UserService,
-    private fb: FormBuilder
+    private fb: FormBuilder,
   ){
     this.userForm = this.fb.group({
       username: [null,[Validators.required]],
@@ -39,10 +43,13 @@ export class LoginComponent {
     this.userService.login(this.userForm.value).subscribe({
       next: response => {
         console.log('Réponse du serveur :', response);
+        this.messages = [{ severity: 'success', summary: 'Success', detail: 'Login successful.' }];
         this.router.navigate(['/home']);
+
       },
       error: error => {
         console.error('Erreur lors de l\'envoi des données au serveur :', error);
+        this.messages = [{ severity: 'error', summary: 'Error', detail: 'Incorrect username or password. Please try again.' }];
       }
     });
 

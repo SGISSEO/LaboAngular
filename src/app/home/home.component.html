@@ -1,18 +1,24 @@
 <div class="background-container">
-  <h1 class="text-center">Bienvenu(e) sur la Gestion de Cinéma</h1>
+  <div *ngIf="isLoggedIn">
+    <p-messages [value]="[{severity:'success', summary:'Success', detail:'Login successful.'}]"></p-messages>
+  </div>
+  <h1 class="text-center">Bienvenue sur la Gestion de Cinéma</h1>
+  
 
   <div class="films-container">
     <h2>Films à l'Affiche</h2>
     <p-carousel [value]="films" [numVisible]="3" [numScroll]="3">
       <ng-template let-film pTemplate="item">
-        <div class="film-card">
+        <div class="film-card" (mouseenter)="onMouseEnter(film)" (mouseleave)="onMouseLeave(film)" [ngClass]="{'hovered': film.hovered}">
           <img [src]="film.imageUrl" width="200" height="300">
-          <div class="film-details">
-            <h3>{{film.title}}</h3>
+          <div class="category">
+            <h3 (click)="toggleDescription(film)" class="custom-header">{{film.title}}</h3>
             <p><strong>Genre:</strong> {{film.genre}}</p>
             <p><strong>Directeur:</strong> {{film.director}}</p>
             <p><strong>Durée:</strong> {{film.duration}}</p>
+            <p *ngIf="film.showDescription"><strong>Description:</strong> {{film.description}}</p>
           </div>
+
         </div>
       </ng-template>
     </p-carousel>

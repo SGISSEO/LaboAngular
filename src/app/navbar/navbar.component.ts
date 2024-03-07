@@ -21,7 +21,7 @@ export class NavbarComponent {
         {label: 'Accueil', routerLink: '/home', icon: 'pi pi-home'},
         {label: 'Films', routerLink: '/film', icon: 'pi pi-ticket'},
         {label: 'Séances', routerLink: '/seance', icon: 'pi pi-calendar'},
-        {label: 'Salles', routerLink: '/salle'},
+        {label: 'Salles', routerLink: '/salle',}, //visible: this.isLogged
         {label: 'Réservations', routerLink: '/reservation', icon: 'pi pi-bookmark'},
         {label: 'Login', routerLink: '/login', icon: 'pi pi-sign-in',visible: !this.isLogged},
         {label: 'Register', routerLink: '/register', icon: 'pi pi-user-plus',visible: !this.isLogged},

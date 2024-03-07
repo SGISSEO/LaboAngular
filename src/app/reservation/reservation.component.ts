@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { UserService } from '../services/user.service';
-
-
+import { Message } from 'primeng/api';
+import { Router, ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-reservation',
   templateUrl: './reservation.component.html',
@@ -11,7 +11,7 @@ export class ReservationComponent {
 
 
   reservations: any[] = [
-    { seat: "A1", status: ''},
+    { seat: "A1", status: '', username: "test"},
     { seat: "A2", status: ''},
     { seat: "A3", status: ''},
     { seat: "A4", status: ''},
@@ -65,18 +65,24 @@ export class ReservationComponent {
     { seat: "A48", status: ''},
     { seat: "A49", status: ''},
     { seat: "A50", status: ''},
-  ]; // Remplacez ceci par vos données de réservation
-  places: any[] = []; // Ajouter cette variable pour stocker les informations sur les places
-  utilisateurConnecte: string | null = null; // Utilisateur connecté
+  ];
   
-  constructor(public userService: UserService) {}
-
+  constructor(public userService: UserService, private router: Router, private route: ActivatedRoute) {}
+  isReservationPage(): boolean {
+    // Vérifiez l'URL actuelle pour voir si l'utilisateur est sur la page de réservation
+    return this.router.url.includes('reservation');
+  }
+  messages: Message[] = []; // Initialisez messages avec un tableau vide
+  ngOnInit() {
+    this.messages = [{ severity: 'info', summary: 'info', detail: 'Vous devez être connecté pour pouvoir réserver.' }];
+}
   reserverSiege(siege: any): void {
     // Vérifiez si l'utilisateur est connecté
     if (!this.userService.isLogged) {
-      // Affichez un message d'erreur ou redirigez vers la page de connexion
+      // Affichez un message d'erreur à l'utilisateur
       return;
     }
+    
 
     // Vérifiez le nombre de réservations actuelles
     if (this.reservations.filter(res => res.status === 'Place réservée').length >= 50) {
@@ -94,6 +100,7 @@ export class ReservationComponent {
     // Mettez à jour l'état de la réservation
     siege.status = 'Place réservée';
   }
+
 
   resetReservationsForSeat(reservation: any): void {
     // Réinitialisez l'état de réservation
