@@ -1,8 +1,13 @@
 <div class="background-container">
-  <!-- Votre code existant pour le contenu avant les films -->
+  <ng-container *ngIf="userService.isLogged">
+    <p-messages [(value)]="messages" [enableService]="false" [closable]="true"></p-messages>
+  </ng-container>
+  
+  
   <h1>Bienvenu(e) sur la gestion de cinema</h1>
+  <h2>Films à l'Affiche</h2>
+
   <div class="films-container">
-    <h2>Films à l'Affiche</h2>
     <p-carousel [value]="films" [numVisible]="3" [numScroll]="3">
       <ng-template let-film pTemplate="item">
         <div class="film-card">

@@ -8,14 +8,19 @@
 
 .films-container {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center; /* Centre horizontalement */
-  margin-top: 20px; /* Espacement entre le titre et la section des films */
+  flex-wrap: wrap; /* Permet aux éléments de passer à la ligne si nécessaire */
+  width: 100vh;
+  color: white;
 }
+
 h2 {
+  text-decoration: underline;
+  text-transform: uppercase;
+  font-style: italic;
   color: white;
 }
 h1 {
+  text-decoration: underline;
   color: white;
 }
 
@@ -50,18 +55,6 @@ h1 {
 }
 
 .category:hover {
-  background-color: white;
+  background-color: rgb(78, 76, 76);
 }
 
-.custom-header {
-  font-size: 20px;
-  color: black;
-  background-color: rgb(209, 201, 201);
-  padding: 10px;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.custom-header:hover {
-  background: linear-gradient(to right, rgb(85, 85, 85), rgb(205, 200, 200));
-}

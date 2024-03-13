@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { FormGroup } from '@angular/forms';
 import { CarouselModule } from 'primeng/carousel';
 import { UserService } from '../services/user.service';
+import { Message } from 'primeng/api';
 
 @Component({
   selector: 'app-home',
@@ -44,14 +45,18 @@ export class HomeComponent implements OnInit {
   }
   
 
-  constructor(private userService: UserService) {
+  constructor(public userService: UserService) {
     
     this.formGroup = new FormGroup({
   });
   }
+  messages: Message[] = []; // Initialisez messages avec un tableau vide
+
 
   ngOnInit(): void {
+
     this.isLoggedIn = this.userService.isLogged;
+    this.messages = [{ severity: 'success', summary: 'Connexion réussie', detail: 'Vous êtes maintenant connecté.' }];
   }
 
 }
