@@ -1,45 +1,44 @@
-.text-center {
-  text-align: center;
-}
-
-
-.container {
+.background-container {
   display: flex;
-  flex-direction: row-reverse; /* Aligne les éléments de droite à gauche */
-  justify-content: space-between; /* Pour répartir l'espace disponible entre les éléments */
+  flex-direction: column; /* Pour empiler verticalement les éléments */
+  justify-content: center; /* Centre verticalement */
+  align-items: center; /* Centre horizontalement */
+  height: 100vh; /* Assure que le conteneur occupe toute la hauteur de la vue */
 }
-
-
-
-.films-container, .seances-container {
-  margin: 10px; /* Espacement entre les éléments */
-  box-sizing: border-box; 
-}
-
 
 .films-container {
   display: flex;
-  flex-wrap: wrap; /* Permet aux éléments de passer à la ligne si nécessaire */
-  width: 100%;
-  
+  flex-wrap: wrap;
+  justify-content: center; /* Centre horizontalement */
+  margin-top: 20px; /* Espacement entre le titre et la section des films */
 }
-p-carousel {
-  width: 100%;
+h2 {
+  color: white;
 }
+h1 {
+  color: white;
+}
+
 
 .film-card {
   position: relative;
   overflow: hidden;
+  margin: 10px;
+  box-sizing: border-box;
   transition: transform 0.3s ease;
 }
 
-.film-card:hover {
-  transform: scale(1.05);
+.film-card img {
+  display: block;
+  width: 200px; /* Ajoutez une largeur fixe à vos images */
+  height: 300px; /* Ajoutez une hauteur fixe à vos images */
+  transition: filter 0.3s ease; /* Ajoutez une transition pour le filtre */
 }
 
-.film-card.hovered img {
+.film-card:hover img {
   filter: brightness(80%);
 }
+
 .category {
   text-align: center;
   padding: 20px;
@@ -53,6 +52,7 @@ p-carousel {
 .category:hover {
   background-color: white;
 }
+
 .custom-header {
   font-size: 20px;
   color: black;
@@ -61,44 +61,7 @@ p-carousel {
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
+
 .custom-header:hover {
   background: linear-gradient(to right, rgb(85, 85, 85), rgb(205, 200, 200));
 }
-
-
-
-
-
-
-
-
-
-
-
-
-.seance-item {
-  margin-bottom: 10px; /* Espacement entre les éléments */
-}
-
-
-.text-center, .film-details, .seances-container {
-color: rgba(255, 255, 255, 0.9); /* Noir légèrement transparent */
-text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8); /* Ombre portée pour améliorer la lisibilité */
-}
-h3 {
-text-decoration: underline;
-font-style: italic;
-}
-strong {
-text-decoration: underline;
-font-style: italic;
-}
-h2 {
-text-decoration: underline;
-text-transform: uppercase;
-font-style: italic;
-color: white;
-}
-
-
-

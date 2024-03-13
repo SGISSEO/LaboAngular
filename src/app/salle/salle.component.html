@@ -1,10 +1,9 @@
 <div class="container">
     <ng-container *ngIf="!userService.isLogged">
         <p-messages [(value)]="messages" [enableService]="false" [closable]="true"></p-messages>
-      </ng-container>
+    </ng-container>
 
-    <p-table [value]="salles">
-        
+    <p-table *ngIf="userService.isLogged" [value]="salles">
         <ng-template pTemplate="header">
             <tr>
                 <th>Nom des salles</th>
@@ -14,7 +13,6 @@
                 <th>États</th>
             </tr>
         </ng-template>
-        <div *ngIf="isLogged">
 
         <ng-template pTemplate="body" let-salle>
             <tr>
@@ -28,6 +26,5 @@
                 </td>
             </tr>
         </ng-template>
-        </div>
     </p-table>
-    </div>
+</div>

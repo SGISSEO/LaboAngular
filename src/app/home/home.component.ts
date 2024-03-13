@@ -12,7 +12,8 @@ import { UserService } from '../services/user.service';
 export class HomeComponent implements OnInit {
   searchQuery: string = '';
   isLoggedIn: boolean = false; // Déclaration de la propriété isLoggedIn
-  
+  displayModal: boolean = false;
+  selectedFilm: any; // Pour stocker les détails du film sélectionné
   
 
   formGroup: FormGroup;
@@ -31,6 +32,15 @@ export class HomeComponent implements OnInit {
 
   onMouseLeave(film: any) {
     film.hovered = false;
+  }
+
+  showModal(film: any) {
+    this.selectedFilm = film; // Stocke les détails du film sélectionné
+    this.displayModal = true;
+  }
+
+  hideModal() {
+    this.displayModal = false;
   }
   
 

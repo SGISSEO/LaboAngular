@@ -26,6 +26,7 @@ import { UserService } from './services/user.service';
 import { TableModule } from 'primeng/table';
 import { AccordionModule } from 'primeng/accordion';
 import { MessagesModule } from 'primeng/messages';
+import { DialogModule } from 'primeng/dialog';
 @NgModule({
   declarations: [
     AppComponent,
@@ -57,6 +58,7 @@ import { MessagesModule } from 'primeng/messages';
     TableModule,
     AccordionModule,
     MessagesModule,
+    DialogModule,
   ],
   providers: [
     UserService
