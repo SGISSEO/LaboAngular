@@ -21,6 +21,7 @@ export class HomeComponent implements OnInit  {
     { title: 'The Batman', genre: 'Action, Crime, Drame', director: 'Matt Reeves', duration: "2h56m", description: '"The Batman" est un film de super-héros qui explore une version sombre et réaliste de l univers de Batman. Réalisé par Matt Reeves, il met en vedette Robert Pattinson dans le rôle de Bruce Wayne / Batman. L intrigue suit Batman alors qu il enquête sur une série de meurtres mystérieux à Gotham City, révélant une conspiration impliquant certains des criminels les plus redoutables de la ville, y compris le légendaire Joker.' ,imageUrl: 'assets/The Batman.png' },
     { title: 'Dune', genre: 'Science-fiction, Aventure, Action', director: 'Denis Villeneuve', duration: "2h35m", description: '"Dune" est une épopée de science-fiction réalisée par Denis Villeneuve, adaptée du roman du même nom écrit par Frank Herbert. Le film suit l histoire de Paul Atreides, un jeune noble dont la famille est chargée de gouverner la planète désertique Arrakis, connue pour sa ressource la plus précieuse, le "melange d épices".' ,imageUrl: 'assets/Dune.png' },
   ];
+ 
   toggleDescription(film: any) {
     film.showDescription = !film.showDescription;
   }

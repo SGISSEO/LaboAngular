@@ -47,7 +47,7 @@ h1 {
 
 .category {
   text-align: center;
-  padding: 20px;
+  padding: 25px;
   border: 2px solid white;
   border-radius: 10px;
   width: 200px;
@@ -55,6 +55,10 @@ h1 {
   cursor: pointer;
   text-decoration: underline;
 }
+.info-button {
+  margin-top: 10px; /* Ajustez la marge supérieure selon vos préférences */
+}
+
 
 .category:hover {
   background-color: rgb(78, 76, 76);
@@ -63,5 +67,3 @@ h1 {
 .film-details {
   padding: 20px;
 }
-
-
