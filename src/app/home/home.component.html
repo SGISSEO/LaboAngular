@@ -24,8 +24,8 @@
     </p-carousel>
   </div>
 
-  <p-dialog [(visible)]="displayModal" [modal]="true" header="Détails du Film">
-    <div *ngIf="selectedFilm">
+  <p-dialog  [(visible)]="displayModal" [modal]="true" header="Détails du Film">
+    <div *ngIf="selectedFilm" class="film-details">
       <img [src]="selectedFilm.imageUrl" width="200" height="300">
       <p><strong>Titre:</strong> {{selectedFilm.title}}</p>
       <p><strong>Genre:</strong> {{selectedFilm.genre}}</p>

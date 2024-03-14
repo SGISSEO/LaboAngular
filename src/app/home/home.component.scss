@@ -6,6 +6,7 @@
   height: 100vh; /* Assure que le conteneur occupe toute la hauteur de la vue */
 }
 
+
 .films-container {
   display: flex;
   flex-wrap: wrap; /* Permet aux éléments de passer à la ligne si nécessaire */
@@ -52,9 +53,15 @@ h1 {
   width: 200px;
   transition: background-color 0.3s ease;
   cursor: pointer;
+  text-decoration: underline;
 }
 
 .category:hover {
   background-color: rgb(78, 76, 76);
 }
+
+.film-details {
+  padding: 20px;
+}
+
 
