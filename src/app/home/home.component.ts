@@ -16,6 +16,7 @@ export class HomeComponent implements OnInit  {
   displayModal: boolean = false;
   selectedFilm: any; // Pour stocker les détails du film sélectionné
   formGroup: FormGroup; // Déclarez formGroup
+  message: Message | undefined;
   films: any[] = [
     { title: 'Spider-Man: No Way Home 1', genre: 'Action, Aventure, Fantaisie', director: 'Jon Watts', duration: "2h28m", description: '"Spider-Man: No Way Home" est un film de super-héros qui suit les aventures de Peter Parker / Spider-Man, confronté à une crise lorsque son identité secrète est révélée au grand public. Dans sa quête pour réparer les dommages causés par un sort magique, Peter se retrouve plongé dans un multivers où il rencontre d autres versions de lui-même.', imageUrl: 'assets/Spiderman.png' },
     { title: 'The Batman', genre: 'Action, Crime, Drame', director: 'Matt Reeves', duration: "2h56m", description: '"The Batman" est un film de super-héros qui explore une version sombre et réaliste de l univers de Batman. Réalisé par Matt Reeves, il met en vedette Robert Pattinson dans le rôle de Bruce Wayne / Batman. L intrigue suit Batman alors qu il enquête sur une série de meurtres mystérieux à Gotham City, révélant une conspiration impliquant certains des criminels les plus redoutables de la ville, y compris le légendaire Joker.' ,imageUrl: 'assets/The Batman.png' },
@@ -54,7 +55,13 @@ export class HomeComponent implements OnInit  {
   ngOnInit(): void {
     
     this.isLoggedIn = this.userService.isLogged;
-    this.messages = [{ severity: 'success', summary: 'Connexion réussie', detail: 'Vous êtes maintenant connecté.' }];
+    this.userService.message$.subscribe(message => {
+      this.message = message;
+    });
+   
+
+
+    
   }
 
 }

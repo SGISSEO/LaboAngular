@@ -53,6 +53,8 @@ h1 {
   width: 200px;
   transition: background-color 0.3s ease;
   text-decoration: underline;
+  height: 150px; /* Ajout de la hauteur fixe */
+
 }
 .info-button {
   margin-top: 10px; /* Ajustez la marge supérieure selon vos préférences */
@@ -64,7 +66,10 @@ h1 {
 }
 .button {
   cursor: pointer;
+  height: 40px; /* Ajoutez la hauteur fixe ici */
 }
+
+
 
 .film-details {
   padding: 20px;

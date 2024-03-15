@@ -50,6 +50,14 @@ main {
     position: fixed; /* Fixer l'élément pour qu'il reste en arrière-plan */
     left: 0; /* Aligner à gauche */
   }
+  .progress-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+  }
+  
 
   
   

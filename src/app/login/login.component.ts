@@ -1,9 +1,7 @@
-// login.component.ts
 import { Component } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
-import { UserService } from '../services/user.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UserService } from '../services/user.service';
 import { Message } from 'primeng/api';
 
 @Component({
@@ -12,8 +10,9 @@ import { Message } from 'primeng/api';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
+  cooldownProgress: number = 0;
+  cooldownInterval: any;
   messages: Message[] = [];
-
 
   userForm!: FormGroup;
 
@@ -28,33 +27,50 @@ export class LoginComponent {
     });
   }
 
- 
-
   onSubmit() {
-    
-    
-
-    console.log(this.userForm);
-    
     if(!this.userForm.valid){
       console.log('error');
       return;
     }
 
-    this.userService.login(this.userForm.value).subscribe({
-      next: response => {
-        console.log('Réponse du serveur :', response);
-        this.messages = [{ severity: 'success', summary: 'Success', detail: 'Login successful.' }];
-        this.router.navigate(['/home']);
+    // Réinitialiser les messages
+    this.messages = [];
 
-      },
-      error: error => {
-        console.error('Erreur lors de l\'envoi des données au serveur :', error);
-        this.messages = [{ severity: 'error', summary: 'Error', detail: 'Incorrect username or password. Please try again.' }];
+    // Simuler une connexion réussie après 5 secondes
+    setTimeout(() => {
+      this.userService.login(this.userForm.value).subscribe({
+        next: response => {
+          // Afficher le message de succès
+          this.messages = [{ severity: 'success', summary: 'Connexion réussie', detail: 'Vous êtes maintenant connecté.' }];
+          // Démarrer la barre de progression
+          this.startCooldown();
+          // Rediriger vers la page d'accueil après un court délai
+          setTimeout(() => {
+            this.router.navigate(['/home']);
+          }, 5500); // Rediriger après 5 secondes
+        },
+        error: error => {
+          this.messages = [{ severity: 'error', summary: 'Erreur', detail: 'Nom d\'utilisateur ou mot de passe incorrect. Veuillez réessayer.' }];
+          this.startCooldown();
+
+          setTimeout(() => {
+            this.messages = [];
+          }, 6000);
+        }
+      });
+    }); 
+  }
+
+  startCooldown() {
+    this.cooldownProgress = 0;
+    clearInterval(this.cooldownInterval);
+    this.cooldownInterval = setInterval(() => {
+      this.cooldownProgress += 100 / 5; // 5 secondes pour atteindre 100%
+      if (this.cooldownProgress >= 100) {
+        clearInterval(this.cooldownInterval);
+        this.cooldownProgress = 0; // Réinitialiser la barre de progression
+        this.messages = []; // Effacer le message après le cooldown
       }
-    });
-    
-    
-
+    }, 1000); // Mettre à jour toutes les secondes
   }
 }

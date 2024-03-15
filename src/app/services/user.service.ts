@@ -5,7 +5,8 @@ import { User } from '../models/dto/user.model';
 import { BehaviorSubject, Observable, tap } from 'rxjs';
 import { LoginForm } from '../models/form/login.form';
 import { Auth } from '../models/dto/auth.model';
-
+import { Message } from 'primeng/api';
+import { Subject } from 'rxjs';
 const BASE_URL = 'http://localhost:8080/api/users'
 
 @Injectable({
@@ -13,6 +14,8 @@ const BASE_URL = 'http://localhost:8080/api/users'
 })
 export class UserService {
   messages: any[] = [];
+  private messageSource = new Subject<Message>();
+  message$ = this.messageSource.asObservable();
 
 
   // utilisateurConnecte: boolean = false;
@@ -23,6 +26,9 @@ export class UserService {
     private readonly http: HttpClient
   ) { 
       this._isLogged$ = new BehaviorSubject<boolean>(!!this.auth)
+  }
+  setMessage(message: Message) {
+    this.messageSource.next(message);
   }
 
   get isLogged(){

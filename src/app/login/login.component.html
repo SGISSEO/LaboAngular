@@ -2,6 +2,11 @@
 
   <form class="login-container" [formGroup]="userForm"  (ngSubmit)="onSubmit()">
     <p-messages [(value)]="messages" [enableService]="false" [closable]="true"></p-messages>
+    <div style="display: flex; align-items: center;">
+      <p-progressBar *ngIf="cooldownProgress > 0" mode="indeterminate" [style]="{ 'width': '100%', 'height': '6px', 'margin-right': '225px' }"></p-progressBar>
+      <span *ngIf="cooldownProgress > 0">{{ cooldownProgress }}%</span>
+    </div>
+    
 
 
 

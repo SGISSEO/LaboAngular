@@ -27,6 +27,8 @@ import { TableModule } from 'primeng/table';
 import { AccordionModule } from 'primeng/accordion';
 import { MessagesModule } from 'primeng/messages';
 import { DialogModule } from 'primeng/dialog';
+import { ProgressBarModule } from 'primeng/progressbar';
+import { ToastModule } from 'primeng/toast';
 @NgModule({
   declarations: [
     AppComponent,
@@ -59,6 +61,8 @@ import { DialogModule } from 'primeng/dialog';
     AccordionModule,
     MessagesModule,
     DialogModule,
+    ProgressBarModule,
+    ToastModule,
   ],
   providers: [
     UserService
