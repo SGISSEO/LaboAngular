@@ -16,9 +16,10 @@
         </div>
       </ng-template>
     </p-carousel>
+    
   </div>
 
-  <p-dialog [(visible)]="displayModal" [modal]="true" header="Détails du Film">
+  <p-dialog [(visible)]="displayModal" [modal]="true">
     <div *ngIf="selectedFilm" class="film-details">
       <img [src]="selectedFilm.imageUrl" width="200" height="300">
       <p><strong>Titre:</strong> {{selectedFilm.title}}</p>

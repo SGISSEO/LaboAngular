@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,   } from '@angular/core';
 import { FormGroup } from '@angular/forms';
-
 
 @Component({
   selector: 'app-film',
@@ -11,8 +10,7 @@ export class FilmComponent implements OnInit{
   searchQuery: string = '';
   displayModal: boolean = false;
   selectedFilm: any; // Pour stocker les détails du film sélectionné
-
-
+ 
   
 
   formGroup: FormGroup;
@@ -30,9 +28,17 @@ export class FilmComponent implements OnInit{
     { title: 'The Flash', genre: 'Action, Aventure', director: 'Andy Muschietti', duration: "Inconnu", description: '"The Flash" est un prochain film de super-héros basé sur le personnage de DC Comics du même nom. Réalisé par Andy Muschietti, le film mettra en vedette Ezra Miller reprenant son rôle de Barry Allen / The Flash, un super-héros possédant la capacité de se déplacer à des vitesses surhumaines.L intrigue du film explorera le concept du multivers, où différentes réalités parallèles coexistent.' ,imageUrl: 'assets/Flash.png' },
     { title: 'Black Adam', genre: 'Science-fiction, Aventure, Action', director: 'Jaume Collet-Serra', duration: "Inconnu", description: '"Black Adam" est un film de super-héros basé sur le personnage de DC Comics du même nom. Réalisé par Jaume Collet-Serra, le film mettra en vedette Dwayne "The Rock" Johnson dans le rôle principal de Black Adam, un anti-héros doté de pouvoirs magiques et physiques extraordinaires.' ,imageUrl: 'assets/BlackAdam.png' }
   ];
-  toggleDescription(film: any) {
-    film.showDescription = !film.showDescription;
-  }
+
+
+  ngOnInit(): void {
+}
+
+
+
+
+  // toggleDescription(film: any) {
+  //   film.showDescription = !film.showDescription;
+  // }
   showModal(film: any) {
     this.selectedFilm = film; // Stocke les détails du film sélectionné
     this.displayModal = true;
@@ -47,9 +53,7 @@ export class FilmComponent implements OnInit{
     this.formGroup = new FormGroup({
   });
   }
-
-  ngOnInit(): void {
-   
-}
+  
+ 
 
 }
