@@ -12,6 +12,7 @@ const BASE_URL = 'http://localhost:8080/api/users'
   providedIn: 'root'
 })
 export class UserService {
+  messages: any[] = [];
 
 
   // utilisateurConnecte: boolean = false;

@@ -32,6 +32,7 @@ export class LoginComponent {
 
   onSubmit() {
     
+    
 
     console.log(this.userForm);
     
@@ -52,6 +53,8 @@ export class LoginComponent {
         this.messages = [{ severity: 'error', summary: 'Error', detail: 'Incorrect username or password. Please try again.' }];
       }
     });
+    
+    
 
   }
 }

@@ -80,24 +80,23 @@ h2 {
   border-radius: 10px;
   width: 200px;
   transition: background-color 0.3s ease;
-  cursor: pointer;
   color: white;
+}
+.button {
+  cursor: pointer;
 }
 
 .category:hover {
-  background-color: rgb(78, 76, 76);
+  background-color: black;
 }
-.custom-header {
-  font-size: 20px;
-  color: black;
-  background-color: rgb(209, 201, 201);
-  padding: 10px;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+.film-details {
+  padding: 20px;
 }
-.custom-header:hover {
-  background: linear-gradient(to right, rgb(85, 85, 85), rgb(205, 200, 200));
+.info-button {
+  margin-top: 10px; /* Ajustez la marge supérieure selon vos préférences */
 }
+
+
 
 
 

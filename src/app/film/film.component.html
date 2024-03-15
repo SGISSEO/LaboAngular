@@ -11,7 +11,7 @@
             <!-- <p><strong>Genre:</strong> {{film.genre}}</p>
             <p><strong>Directeur:</strong> {{film.director}}</p>
             <p><strong>Durée:</strong> {{film.duration}}</p> -->
-            <button pButton type="button" label="Infos film" icon="pi pi-book" class="p-button-success p-button-rounded p-button-outlined" (click)="showModal(film)"></button>
+            <button pButton type="button" label="Infos film" icon="pi pi-book" class="info-button p-button-success p-button-rounded p-button-outlined" (click)="showModal(film)"></button>
           </div>
         </div>
       </ng-template>
@@ -27,6 +27,6 @@
       <p><strong>Durée:</strong> {{selectedFilm.duration}}</p>
       <p><strong>Description:</strong> {{selectedFilm.description}}</p>
     </div>
-    <button pButton type="button" label="Fermer" icon="pi pi-times" class="p-button-danger p-button-rounded p-button-outlined"(click)="hideModal()"></button>
+    <button pButton type="button" label="Fermer" icon="pi pi-times" class="info-button p-button-danger p-button-rounded p-button-outlined"(click)="hideModal()"></button>
   </p-dialog>
 </div>

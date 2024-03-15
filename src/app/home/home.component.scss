@@ -52,7 +52,6 @@ h1 {
   border-radius: 10px;
   width: 200px;
   transition: background-color 0.3s ease;
-  cursor: pointer;
   text-decoration: underline;
 }
 .info-button {
@@ -61,7 +60,10 @@ h1 {
 
 
 .category:hover {
-  background-color: rgb(78, 76, 76);
+  background-color: black;
+}
+.button {
+  cursor: pointer;
 }
 
 .film-details {
