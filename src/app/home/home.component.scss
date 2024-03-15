@@ -5,8 +5,6 @@
   align-items: center; /* Centre horizontalement */
   height: 100vh; /* Assure que le conteneur occupe toute la hauteur de la vue */
 }
-
-
 .films-container {
   display: flex;
   flex-wrap: wrap; /* Permet aux éléments de passer à la ligne si nécessaire */
@@ -14,16 +12,19 @@
   color: white;
 }
 
+
+
+h1 {
+  text-decoration: underline;
+  color: white;
+}
 h2 {
   text-decoration: underline;
   text-transform: uppercase;
   font-style: italic;
   color: white;
 }
-h1 {
-  text-decoration: underline;
-  color: white;
-}
+
 
 
 .film-card {
@@ -33,17 +34,16 @@ h1 {
   box-sizing: border-box;
   transition: transform 0.3s ease;
 }
-
 .film-card img {
   display: block;
   width: 200px; /* Ajoutez une largeur fixe à vos images */
   height: 300px; /* Ajoutez une hauteur fixe à vos images */
   transition: filter 0.3s ease; /* Ajoutez une transition pour le filtre */
 }
-
 .film-card:hover img {
   filter: brightness(70%);
 }
+
 
 
 .category {
@@ -57,13 +57,14 @@ h1 {
   height: 150px; /* Ajout de la hauteur fixe */
 
 }
-.info-button {
-  margin-top: 10px; /* Ajustez la marge supérieure selon vos préférences */
+.category:hover {
+  background-color: black;
 }
 
 
-.category:hover {
-  background-color: black;
+
+.info-button {
+  margin-top: 10px; /* Ajustez la marge supérieure selon vos préférences */
 }
 .button {
   cursor: pointer;
@@ -72,10 +73,6 @@ h1 {
 
 
 
-.film-details {
-  padding: 20px;
-  color: black;
-}
 strong {
   font-weight: bold;
 }
