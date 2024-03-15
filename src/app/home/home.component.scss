@@ -42,8 +42,9 @@ h1 {
 }
 
 .film-card:hover img {
-  filter: brightness(80%);
+  filter: brightness(70%);
 }
+
 
 .category {
   text-align: center;
@@ -73,4 +74,8 @@ h1 {
 
 .film-details {
   padding: 20px;
+  color: black;
+}
+strong {
+  font-weight: bold;
 }

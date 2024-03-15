@@ -47,10 +47,7 @@
   .film-card:hover img {
     filter: brightness(70%);
   }
-  
-  .film-card:hover {
-    transform: scale(1.05);
-  }
+
   
   .film-card.hovered img {
     filter: brightness(80%);
@@ -95,8 +92,13 @@ h2 {
 .category:hover {
   background-color: black;
 }
+
 .film-details {
   padding: 20px;
+  color: black;
+}
+strong {
+  font-weight: bold;
 }
 .info-button {
   margin-top: 10px; /* Ajustez la marge supérieure selon vos préférences */
