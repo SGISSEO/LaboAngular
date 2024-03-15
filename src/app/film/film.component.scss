@@ -1,70 +1,53 @@
-.text-center {
-    text-align: center;
-}
-
-
 .container {
-    display: flex;
-    flex-direction: row-reverse; /* Aligne les éléments de droite à gauche */
-    justify-content: space-between; /* Pour répartir l'espace disponible entre les éléments */
-  }
-
-.films-container, .seances-container {
-    margin: 10px; /* Espacement entre les éléments */
-    box-sizing: border-box; 
-  }
-
-
-  .background-container {
-    display: flex;
-    flex-direction: column; /* Pour empiler verticalement les éléments */
-    justify-content: center; /* Centre verticalement */
-    align-items: center; /* Centre horizontalement */
-    height: 100vh; /* Assure que le conteneur occupe toute la hauteur de la vue */
-  }
-
-
-.films-container {
-    display: flex;
-    flex-wrap: wrap; /* Permet aux éléments de passer à la ligne si nécessaire */
-    width: 100vh;
-  }
-  p-carousel {
-    width: 100%;
-  }
-  
-  .film-card {
-    position: relative;
-    overflow: hidden;
-    transition: transform 0.3s ease;
-  }
-  .film-card img {
-    display: block;
-    width: 200px; /* Ajoutez une largeur fixe à vos images */
-    height: 300px; /* Ajoutez une hauteur fixe à vos images */
-    transition: filter 0.3s ease; /* Ajoutez une transition pour le filtre */
-  }
-  .film-card:hover img {
-    filter: brightness(70%);
-  }
-
-  
-  .film-card.hovered img {
-    filter: brightness(80%);
-  }
-  .seance-item {
-    margin-bottom: 10px; /* Espacement entre les éléments */
-  }
-h3 {
-  text-decoration: underline;
-  font-style: italic;
+  display: flex;
+  flex-direction: row-reverse; /* Aligne les éléments de droite à gauche */
+  justify-content: space-between; /* Pour répartir l'espace disponible entre les éléments */
 }
+.films-container {
+  display: flex;
+  flex-wrap: wrap; /* Permet aux éléments de passer à la ligne si nécessaire */
+  width: 100vh;
+}  
+.films-container, .seances-container {
+  margin: 10px; /* Espacement entre les éléments */
+  box-sizing: border-box; 
+}
+.background-container {
+  display: flex;
+  flex-direction: column; /* Pour empiler verticalement les éléments */
+  justify-content: center; /* Centre verticalement */
+  align-items: center; /* Centre horizontalement */
+  height: 100vh; /* Assure que le conteneur occupe toute la hauteur de la vue */
+}
+
+
+
+.film-card {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+.film-card img {
+  display: block;
+  width: 200px; /* Ajoutez une largeur fixe à vos images */
+  height: 300px; /* Ajoutez une hauteur fixe à vos images */
+  transition: filter 0.3s ease; /* Ajoutez une transition pour le filtre */
+}
+.film-card:hover img {
+  filter: brightness(70%);
+}
+.film-card.hovered img {
+  filter: brightness(80%);
+}
+.film-details {
+  padding: 20px;
+  color: black;
+}
+
+
+
 h1 {
   color: white;
-}
-strong {
-  text-decoration: underline;
-  font-style: italic;
 }
 h2 {
   text-decoration: underline;
@@ -72,6 +55,13 @@ h2 {
   font-style: italic;
   color: white;
 }
+h3 {
+  text-decoration: underline;
+  font-style: italic;
+}
+
+
+
 .category {
   text-align: center;
   padding: 20px;
@@ -82,27 +72,33 @@ h2 {
   transition: background-color 0.3s ease;
   color: white;
 }
+.category:hover {
+  background-color: black;
+}
 
 
 
 .button {
   cursor: pointer;
 }
-
-.category:hover {
-  background-color: black;
-}
-
-.film-details {
-  padding: 20px;
-  color: black;
-}
-strong {
-  font-weight: bold;
-}
 .info-button {
   margin-top: 10px; /* Ajustez la marge supérieure selon vos préférences */
 }
+
+
+
+.seance-item {
+  margin-bottom: 10px; /* Espacement entre les éléments */
+}
+p-carousel {
+  width: 100%;
+} 
+strong {
+  text-decoration: underline;
+  font-style: italic;
+  font-weight: bold;
+}
+
 
 
 

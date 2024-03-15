@@ -10,9 +10,6 @@ export class FilmComponent implements OnInit{
   searchQuery: string = '';
   displayModal: boolean = false;
   selectedFilm: any; // Pour stocker les détails du film sélectionné
- 
-  
-
   formGroup: FormGroup;
   
   films: any[] = [
@@ -32,28 +29,19 @@ export class FilmComponent implements OnInit{
 
   ngOnInit(): void {
 }
+showModal(film: any) {
+  this.selectedFilm = film; // Stocke les détails du film sélectionné
+  this.displayModal = true;
+}
+hideModal() {
+  this.displayModal = false;
+}
 
 
 
-
-  // toggleDescription(film: any) {
-  //   film.showDescription = !film.showDescription;
-  // }
-  showModal(film: any) {
-    this.selectedFilm = film; // Stocke les détails du film sélectionné
-    this.displayModal = true;
-  }
-
-  hideModal() {
-    this.displayModal = false;
-  }
-
-  constructor() {
-    
-    this.formGroup = new FormGroup({
+constructor() {
+  
+  this.formGroup = new FormGroup({
   });
   }
-  
- 
-
 }

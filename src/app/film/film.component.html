@@ -8,17 +8,15 @@
           <img [src]="film.imageUrl" width="200" height="300">
           <div class="category">
             <h3>{{film.title}}</h3>
-            <!-- <p><strong>Genre:</strong> {{film.genre}}</p>
-            <p><strong>Directeur:</strong> {{film.director}}</p>
-            <p><strong>Durée:</strong> {{film.duration}}</p> -->
             <button pButton type="button" label="Infos film" icon="pi pi-book" class="info-button p-button-success p-button-rounded p-button-outlined" (click)="showModal(film)"></button>
           </div>
         </div>
       </ng-template>
     </p-carousel>
-    
   </div>
 
+
+  
   <p-dialog [(visible)]="displayModal" [modal]="true">
     <div *ngIf="selectedFilm" class="film-details">
       <img [src]="selectedFilm.imageUrl" width="200" height="300">
