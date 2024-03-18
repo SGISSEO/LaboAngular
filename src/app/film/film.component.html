@@ -17,7 +17,7 @@
 
 
   
-  <p-dialog [(visible)]="displayModal" [modal]="true">
+  <p-dialog [(visible)]="displayModal" [modal]="true"  [style]="{ 'width': '400px', 'height': '500px' }">
     <div *ngIf="selectedFilm" class="film-details">
       <img [src]="selectedFilm.imageUrl" width="200" height="300">
       <p><strong>Titre:</strong> {{selectedFilm.title}}</p>
@@ -26,6 +26,6 @@
       <p><strong>Durée:</strong> {{selectedFilm.duration}}</p>
       <p><strong>Description:</strong> {{selectedFilm.description}}</p>
     </div>
-    <button pButton type="button" label="Fermer" icon="pi pi-times" class="info-button p-button-danger p-button-rounded p-button-outlined"(click)="hideModal()"></button>
+    <button pButton type="button" label="Fermer" icon="pi pi-times" class="info-button p-button-danger p-button-rounded p-button-outlined"(click)="hideModal()" [style]="{ 'display': 'block', 'margin': '0 auto', 'text-align': 'center', 'margin-top': '10px' }" ></button>
   </p-dialog>
 </div>
