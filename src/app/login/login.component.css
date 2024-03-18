@@ -1,62 +1,45 @@
-/* input[type="password"],
-input[type="text"] {
-    border: 3px solid black;
-    padding: 3px;
-    margin: 10px;
-}
-
-
-main {
-    font-family : Arial , "Times New Roman" , Times, serif;
-    font-size : 20px;
-    color:black;
-
-} */
-
-
 .login-container {
-    width: 300px;
-    margin: auto;
-    margin-top: 100px;
-    padding: 20px;
-    border: 1px solid black;
-    border-radius: 5px;
-    background-color: #f9f9f9;
+  width: 300px;
+  margin: auto;
+  margin-top: 100px;
+  padding: 20px;
+  border: 1px solid black;
+  border-radius: 5px;
+  background-color: #f9f9f9;
   }
+.login-container h2 {
+  text-align: center;
+  color: rgb(104, 104, 231);   
+}
+.background-container {
+  background-image: url('/assets/Cinema.png');
+  background-size: cover; /* Pour que l'image de fond couvre toute la surface */
+  background-position: center; /* Pour centrer l'image */
+  height: 100vh; /* Hauteur égale à la hauteur de la fenêtre */
+  width: 100%; /* Largeur égale à la largeur de la fenêtre */
+  position: fixed; /* Fixer l'élément pour qu'il reste en arrière-plan */
+  left: 0; /* Aligner à gauche */
+}
+   
   
-  .login-container h2 {
-    text-align: center;
-    color: rgb(104, 104, 231);
-
-  }
+.p-field {
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
   
-  .p-field {
-    margin-bottom: 1rem;
-    font-weight: bold;
-  }
-  
-  button {
-    width: 100%;
-  }
-  .valid {
-    border-color: green;
-  }
-  .background-container {
-    background-image: url('/assets/Cinema.png');
-    background-size: cover; /* Pour que l'image de fond couvre toute la surface */
-    background-position: center; /* Pour centrer l'image */
-    height: 100vh; /* Hauteur égale à la hauteur de la fenêtre */
-    width: 100%; /* Largeur égale à la largeur de la fenêtre */
-    position: fixed; /* Fixer l'élément pour qu'il reste en arrière-plan */
-    left: 0; /* Aligner à gauche */
-  }
-  .progress-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
-  }
+button {
+  width: 100%;
+}
+.valid {
+  border-color: green;
+}
+.progress-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
   
 
   

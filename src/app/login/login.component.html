@@ -9,7 +9,6 @@
     
 
 
-
       <i><u><h2>Login</h2></u></i>
 
       <div class="p-fluid">
@@ -17,12 +16,15 @@
           <div class="p-field" [ngStyle]="{'border-color': userForm.controls['username'].dirty && userForm.controls['username'].invalid ? 'red' : userForm.controls['username'].dirty && userForm.controls['username'].valid ? 'green' : ''}">
             <label for="username">Username:</label>
             <input type="text" id="username" pInputText name="username" formControlName="username" required minlength="5" maxlength="15"/>
+            
             <div *ngIf="userForm.controls['username'].invalid && (userForm.controls['username'].dirty || userForm.controls['username'].touched)" class="p-error">
               <div *ngIf="userForm.controls['username'].errors?.['required']">Username is required</div>
               <div *ngIf="userForm.controls['username'].errors?.['minlength']">Username must be at least 5 characters long</div>
               <div *ngIf="userForm.controls['username'].errors?.['maxlength']">Username cannot be longer than 15 characters</div>
             </div>
           </div>
+
+
 
           <div class="p-field" [ngStyle]="{'border-right-color': userForm.controls['password'].dirty && userForm.controls['password'].invalid ? 'red' : userForm.controls['password'].dirty && userForm.controls['password'].valid ? 'green' : ''}">
             <label for="password">Password:</label>
@@ -34,6 +36,7 @@
               <div *ngIf="userForm.controls['password'].errors?.['maxlength']">Password cannot be longer than 15 characters</div>
             </div>
           </div>
+          
           <button type="submit" icon="pi pi-sign-in" pButton label="Login" class="p-button-success p-button-outlined"[disabled]="!userForm.valid"></button>
           <button type="submit" icon="pi pi-user-plus" pButton label="S'enregistrer" class="p-button-help p-button-outlined" routerLink="/register"></button>
         </div>
